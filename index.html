@@ -15,15 +15,11 @@
             <img src="./images/logo.svg" alt="logo" />
           </a>
         </div>
-        <ul>
-          <li class="active"><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-        </ul>
+        <ul id="navbar-list"></ul>
       </div>
     </nav>
     <!-- Header -->
-    <section class="header bg-hero" id="home">
+    <section class="header bg-hero section-active" data-nav="Home" id="home">
       <div class="container">
         <div class="row">
           <div class="side-left">
@@ -42,7 +38,7 @@
       </div>
     </section>
     <!-- Services -->
-    <section class="services bg-hero" id="services">
+    <section class="services bg-hero" data-nav="Services" id="services">
       <div class="container">
         <h2>We Provide Best Quality Service</h2>
         <p>
@@ -61,8 +57,8 @@
             <a href="#">Read More</a>
           </li>
           <li>
-            <img src="./images/web-ui.svg" alt="web-ui" />
-            <h3 class="title">Website Ui</h3>
+            <img src="./images/mobile-ui.svg" alt="web-ui" />
+            <h3 class="title">Mobile Ui</h3>
             <p>
               Fast, Powerful & Most Secure Network Solutions for Smart Home &
               Businesses
@@ -70,8 +66,8 @@
             <a href="#">Read More</a>
           </li>
           <li>
-            <img src="./images/web-ui.svg" alt="web-ui" />
-            <h3 class="title">Website Ui</h3>
+            <img src="./images/redesign.svg" alt="web-ui" />
+            <h3 class="title">Redesign Ui</h3>
             <p>
               Fast, Powerful & Most Secure Network Solutions for Smart Home &
               Businesses
@@ -82,7 +78,7 @@
       </div>
     </section>
     <!-- About -->
-    <section class="about bg-hero" id="about">
+    <section class="about bg-hero" data-nav="About" id="about">
       <div class="container">
         <div class="row">
           <div class="side-left">
@@ -99,6 +95,18 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- Some Data -->
+    <section class="contact text-center big-hero" data-nav="Contact" id="contact">
+      <div class="container">
+       <h2>Contact Us</h2>
+       <form action="">
+         <input class="form-control" type="text" name="" id="">
+         <input class="form-control" type="email" name="" id="">
+         <textarea name="" id=""></textarea>
+         <input type="submit" value="Send">
+       </form>
       </div>
     </section>
     <!-- Footer -->
