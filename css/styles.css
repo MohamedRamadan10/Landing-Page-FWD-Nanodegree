@@ -172,6 +172,9 @@ section {
   left: 0;
   width: 100%;
   transition: .3s all ease-in-out;
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(71, 64, 241, 0.1);
+  z-index: 99999999;
 }
 
 .navbar .container {
@@ -201,16 +204,12 @@ section {
   background: rgba(71, 64, 241, 0.5);
   color: #fff;
 }
-.navbar.scroll {
-  background: #fff;
-  box-shadow: 0 3px 3px rgba(71, 64, 241, 0.1);
-  z-index: 99999999;
-}
-.navbar.scroll a {
-  color: #333;
-}
 .navbar.show {
   transform: translateY(0);
+}
+.navbar.show a {
+  color: #333;
+
 }
 .navbar.hide {
   transform: translateY(-100px);

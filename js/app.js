@@ -3,18 +3,6 @@ const navbar = document.getElementById("navbar");
 const navbarList = document.getElementById("navbar-list");
 const sections = Array.from(document.querySelectorAll("section"));
 const fragment = document.createDocumentFragment();
-const isInViewport = (domElement, threshold = 0) => {
-  const boundaries = domElement.getBoundingClientRect();
-  return (
-    boundaries.top >= threshold &&
-    boundaries.left >= threshold &&
-    boundaries.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) -
-        threshold &&
-    boundaries.right <=
-      (window.innerWidth || document.documentElement.clientWidth) - threshold
-  );
-};
 
 // Build Nav
 const buildNav = () => {
@@ -29,31 +17,16 @@ const buildNav = () => {
 buildNav();
 navbarList.appendChild(fragment);
 
-// Add background navbar on scroll
-const addBgNavbar = () => {
-  window.onscroll = () => {
-    if (window.scrollY > 300) {
-      navbar.classList.add("scroll");
-    } else {
-      navbar.classList.remove("scroll");
-    }
-  };
-};
-
-addBgNavbar();
-
 // Hide and show navbar on scroll
 window.onscroll = function (e) {
   const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollY <= this.lastScroll) {
     navbar.classList.add("show");
-    navbar.classList.add("scroll");
     navbar.classList.remove("hide");
   } else {
     navbar.classList.remove("show");
     navbar.classList.add("hide");
-    navbar.classList.add("scroll");
   }
 
   this.lastScroll = scrollY;
@@ -62,7 +35,7 @@ window.onscroll = function (e) {
   let time;
   function checkScroll() {
     time = setTimeout(function () {
-      navbar.classList.add("scroll");
+      navbar.classList.add("show");
       navbar.classList.remove("hide");
     }, 3500);
   }
