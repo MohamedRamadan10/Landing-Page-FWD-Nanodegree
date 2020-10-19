@@ -160,7 +160,6 @@ section {
   flex-direction: column;
   justify-content: center;
   transition: .3s all ease-in-out;
-  overflow: hidden;
   min-height: 100vh;
 }
 /* Navbar */
@@ -191,7 +190,7 @@ section {
   margin-left: 30px;
 }
 .navbar ul li a {
-  color: #fff;
+  color: #333;
   padding: 10px 20px;
   border-radius: 35px;
   -webkit-border-radius: 35px;

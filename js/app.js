@@ -1,6 +1,9 @@
 // Global variables
 const navbar = document.getElementById("navbar");
 const navbarList = document.getElementById("navbar-list");
+const navbarListItem = document.querySelector(
+  "#navbar-list .nav-item .nav-link"
+);
 const sections = Array.from(document.querySelectorAll("section"));
 const fragment = document.createDocumentFragment();
 
@@ -60,3 +63,18 @@ const activeLinkNavSection = () => {
 
 activeLinkNavSection();
 window.addEventListener("scroll", activeLinkNavSection);
+
+// Each item nav clicked scrolls to section
+const scrollToSection = (e) => {
+  navbarList.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    e.preventDefault();
+    if (anchor === e.target) {
+      // console.log(anchor);
+      document.querySelector(e.target.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+};
+
+navbarList.addEventListener("click", scrollToSection);
